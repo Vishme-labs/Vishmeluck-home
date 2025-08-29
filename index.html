@@ -234,9 +234,12 @@
     // Particle effect
     function createParticle() {
       var colors = ["#ffd700", "#ff9800", "#fff", "#2a5298", "#1e3c72"];
-      var size = Math.random() * 16 + 8;
-      var left = Math.random() * window.innerWidth;
-      var top = window.innerHeight + 20;
+    var size = Math.random() * 16 + 8;
+    var centerX = window.innerWidth / 2;
+    var centerY = window.innerHeight / 2 + 80;
+    var spread = 40;
+    var left = centerX + (Math.random() - 0.5) * spread;
+    var top = centerY + (Math.random() - 0.5) * spread;
       var color = colors[Math.floor(Math.random() * colors.length)];
       var particle = $('<div class="particle"></div>').css({
         width: size,
