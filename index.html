@@ -235,11 +235,20 @@
     function createParticle() {
       var colors = ["#ffd700", "#ff9800", "#fff", "#2a5298", "#1e3c72"];
     var size = Math.random() * 16 + 8;
-    var centerX = window.innerWidth / 2;
-    var centerY = window.innerHeight / 2 + 80;
-    var spread = 40;
-    var left = centerX + (Math.random() - 0.5) * spread;
-    var top = centerY + (Math.random() - 0.5) * spread;
+        // Exclude the center box area
+        var box = document.querySelector('.container');
+        var boxRect = box.getBoundingClientRect();
+        var tries = 0;
+        var left, top;
+        do {
+          left = Math.random() * window.innerWidth;
+          top = Math.random() * window.innerHeight;
+          tries++;
+        } while (
+          left > boxRect.left - 24 && left < boxRect.right + 24 &&
+          top > boxRect.top - 24 && top < boxRect.bottom + 24 &&
+          tries < 10
+        );
       var color = colors[Math.floor(Math.random() * colors.length)];
       var particle = $('<div class="particle"></div>').css({
         width: size,
