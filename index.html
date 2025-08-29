@@ -5,46 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vishmeluck Home - Under Construction</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+    .background {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .background svg {
+      width: 100vw;
+      height: 100vh;
+      display: block;
     }
     .container {
+      position: relative;
+      z-index: 1;
       background: rgba(30, 60, 114, 0.85);
-      border-radius: 24px;
+      border-radius: 32px;
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      padding: 48px 32px;
+      padding: 56px 40px 48px 40px;
       text-align: center;
-      max-width: 420px;
+      max-width: 480px;
       width: 100%;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
+      border: 2px solid #ffd70044;
+    }
+    .logo {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      box-shadow: 0 4px 24px rgba(255, 215, 0, 0.15);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .logo img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       margin-bottom: 16px;
       letter-spacing: 2px;
       color: #ffd700;
       text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    h1 .fa-flask {
+      color: #ff9800;
+      font-size: 2.1rem;
+      vertical-align: middle;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 32px;
       color: #e0e0e0;
+      line-height: 1.6;
     }
     .btn {
-      display: inline-block;
-      padding: 16px 32px;
-      font-size: 1.1rem;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 36px;
+      font-size: 1.15rem;
+      font-weight: 600;
       color: #1e3c72;
       background: linear-gradient(90deg, #ffd700 0%, #ff9800 100%);
       border: none;
@@ -53,9 +101,14 @@
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .btn i {
+      font-size: 1.2rem;
+      color: #1e3c72;
     }
     .btn:hover {
-      transform: translateY(-2px) scale(1.05);
+      transform: translateY(-2px) scale(1.07);
       box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
       background: linear-gradient(90deg, #ff9800 0%, #ffd700 100%);
     }
@@ -71,14 +124,53 @@
         padding: 12px 20px;
         font-size: 1rem;
       }
+      .logo {
+        width: 72px;
+        height: 72px;
+      }
+      .logo img {
+        width: 60px;
+        height: 60px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="background">
+    <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bg1" cx="50%" cy="50%" r="80%" fx="50%" fy="50%" gradientTransform="rotate(45)">
+          <stop offset="0%" stop-color="#ffd700" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#1e3c72" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff9800" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#2a5298" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="720" cy="400" rx="600" ry="320" fill="url(#bg1)"/>
+      <ellipse cx="1200" cy="700" rx="320" ry="120" fill="url(#bg2)"/>
+      <ellipse cx="200" cy="800" rx="220" ry="80" fill="#ffd70022"/>
+      <ellipse cx="400" cy="200" rx="120" ry="60" fill="#ff980022"/>
+    </svg>
+  </div>
   <div class="container">
-    <h1>Vishmeluck Home</h1>
-    <p>This project is <strong>under construction</strong>.<br>We're working on something amazing!</p>
-    <a class="btn" href="https://labs.vishmeluck.com" target="_blank" rel="noopener">Check our experiments here</a>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Vishmeluck Logo">
+    </div>
+    <h1>
+      Vishmeluck Home
+      <i class="fa-solid fa-flask"></i>
+    </h1>
+    <p>
+      <i class="fa-solid fa-hammer"></i>
+      This project is <strong>under construction</strong>.<br>
+      We're working on something amazing!
+    </p>
+    <a class="btn" href="https://labs.vishmeluck.com" target="_blank" rel="noopener">
+      <i class="fa-solid fa-rocket"></i>
+      Check our experiments here
+    </a>
   </div>
 </body>
 </html>
